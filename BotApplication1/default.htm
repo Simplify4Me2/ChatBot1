@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+    <link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="bot" />
+<script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+<script src="https://cdn.botframework.com/botframework-webchat/latest/CognitiveServices.js"></script>
+<script>
+    var speechOptions = {
+        speechRecognizer: new CognitiveServices.SpeechRecognizer({ subscriptionKey: 'f86d2af4c733482790a878011106b592' }),
+        speechSynthesizer: new CognitiveServices.SpeechSynthesizer({
+            gender: CognitiveServices.SynthesisGender.Female,
+            subscriptionKey: 'f86d2af4c733482790a878011106b592',
+            voiceName: 'Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'
+        })
+    };
+
+
+    BotChat.App({
+        directLine: { secret: 't4RyVkaTIVY.cwA.rRs.QcDT8guLEn-hGHZ94DzSqkiQU6fCThSnBUJfvZ3z6J4' },
+        user: { id: 'userid' },
+        bot: { id: 'botid' },
+        speechOptions: speechOptions,
+        resize: 'detect'
+    }, document.getElementById("bot"));
+</script>
+</body>
+</html>
